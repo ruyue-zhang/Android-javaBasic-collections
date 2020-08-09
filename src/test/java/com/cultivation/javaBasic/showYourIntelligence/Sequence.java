@@ -28,16 +28,18 @@ class SequenceIterator implements Iterator<Integer> {
     // <--start
     private final Integer start;
     private final Integer end;
+    private Integer temp;
     // --end-->
 
     SequenceIterator(Integer start, Integer end) {
         // TODO: please implements the following code to pass the test
         // <--start
-        if(start > end) {
+        if(start >= end) {
             throw new IllegalArgumentException("Start must be smaller than End.");
         }
         this.start = start;
         this.end = end;
+        this.temp = start;
         // --end-->
     }
 
@@ -45,7 +47,7 @@ class SequenceIterator implements Iterator<Integer> {
     public boolean hasNext() {
         // TODO: please implements the following code to pass the test
         // <--start
-        throw new NotImplementedException();
+        return temp < end;
         // --end-->
     }
 
@@ -53,7 +55,7 @@ class SequenceIterator implements Iterator<Integer> {
     public Integer next() {
         // TODO: please implements the following code to pass the test
         // <--start
-        throw new NotImplementedException();
+        return temp++;
         // --end-->
     }
 }
